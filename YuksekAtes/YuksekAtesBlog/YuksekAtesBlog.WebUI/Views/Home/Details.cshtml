@@ -1,0 +1,25 @@
+﻿@model PostViewModel
+
+<input type="hidden" asp-for="@Model.Id" />
+<div class="card shadow-sm mt-2">
+
+    @if (Model.ImagePath == null)
+    {
+        <img class="mx-auto d-block mt-2" style="width:150px;height:200px" src="~/images/gorsel_yok.png" />
+    }
+    else
+    {
+        <img class="mx-auto d-block mt-2" style="width:500px;height:500px" src="~/images/posts/@Model.ImagePath" />
+    }
+    <div class="card-body">
+        <h4 class="card-text" style="text-align:center">@Model.Name</h4>
+
+        <p style="text-align:center">@Model.Description</p>
+
+    </div>
+    <div >
+        <p style="text-align:center">
+            <a  class="btn btn-secondary" asp-controller="home" asp-action="recipes"> Geri Dön </a>
+        </p>
+    </div>
+</div>

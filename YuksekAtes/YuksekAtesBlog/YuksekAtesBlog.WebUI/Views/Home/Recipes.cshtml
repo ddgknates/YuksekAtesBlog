@@ -1,0 +1,20 @@
+﻿@model List<PostViewModel>
+<div class="container">
+    <div class="row">
+        @foreach (var post in Model)
+        {
+
+            <div class="col-md-4 mb-3">
+                <div class="card" style="width: 25rem;">
+                    <img src="~/images/posts/@post.ImagePath" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title">@post.Name</h5>
+                        <p class="card-text">@post.Summary</p>
+                        <p><a class="btn btn-secondary" asp-controller="home" asp-action="details" asp-route-id="@post.Id">Tarifi Gör »</a></p>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>

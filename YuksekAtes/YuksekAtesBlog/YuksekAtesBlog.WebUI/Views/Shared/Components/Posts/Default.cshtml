@@ -1,0 +1,39 @@
+﻿@model List<PostViewModel>
+
+<div class="row">
+    @if (Model.Any())
+    {
+        @foreach (var post in Model)
+        {
+<div class="container marketing">
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-7">
+                        <h2 class="featurette-heading fw-normal lh-1">@post.Name</h2>
+                        <p class="lead">@post.Summary</p>
+                        <div class="d-flex">
+                            <p><a class="btn btn-secondary" asp-controller="home" asp-action="details" asp-route-id="@post.Id">Tarifi Gör »</a></p>
+                        </div>
+        </div>
+        <div class="col-md-5">
+                        <img style="width:500px; height:500px" src="~/images/posts/@post.ImagePath" />
+
+        </div>
+    </div>
+     
+</div>
+        }
+    }
+    else
+    {
+            <div class="alert alert-danger">
+                İçerik Yok
+            </div>
+    }
+</div>
+
+
+
+
+
+

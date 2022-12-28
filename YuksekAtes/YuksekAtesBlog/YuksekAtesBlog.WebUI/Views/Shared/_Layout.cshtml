@@ -1,0 +1,93 @@
+﻿<html>
+<head>
+    <title>Yüksek Ateş Blog</title>
+    <partial name="_CssPartial"></partial>
+
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    @*<nav class="navbar navbar-expand-lg bg-light">
+        <a asp-controller="home" asp-action="index"> <img src="~/images/logo.jpg" alt="Logo" width="50" height="50" class="d-inline-block align-text-top"></a>
+        <div class="container-fluid d-flex justify-content-between">
+
+            <a class="navbar-brand" asp-controller="home" asp-action="index">              
+                Yüksek Ateş
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" asp-controller="home" asp-action="recipes">Tarifler</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Menü
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-controller="home" asp-action="about"  >Hakkımızda</a></li>
+                            <li><a class="dropdown-item" asp-controller="home" asp-action="contact">İletişim</a></li>
+                            <li><a class="dropdown-item" target="_blank"  href="https://www.instagram.com/yuksek.ates/">İnstagram</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>*@
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <a class="navbar-brand" style="font-size:20px" asp-controller="home" asp-action="index">
+                Yüksek Ateş
+                </a>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <a asp-controller="home" asp-action="index"> <img src="~/images/logo.jpg" alt="Logo" width="75" height="75" class="d-inline-block align-text-top"></a>
+            </ul>
+
+            <div class="justify-content-center align-items-center text-center">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-size:20px">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" asp-controller="home" asp-action="recipes">Tarifler</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Menü
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-controller="home" asp-action="about">Hakkımızda</a></li>
+                            <li><a class="dropdown-item" asp-controller="home" asp-action="contact">İletişim</a></li>
+                            <li><a class="dropdown-item" target="_blank" href="https://www.instagram.com/yuksek.ates/">İnstagram</a></li>
+                        </ul>
+                    </li>
+                </ul>
+        </div>
+    </header>
+    </div>
+
+    @RenderBody()
+
+    <div class="footer-basic">
+        <footer>
+            <div class="social"><a class="p-2" target="_blank" href="https://www.instagram.com/yuksek.ates/"><i class="icon ion-social-instagram mt-1"></i></a><a class="p-2" target="_blank" href="https://www.twitter.com"><i class="icon ion-social-twitter mt-3"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a asp-controller="home" asp-action="index">Yüksek Ateş</a></li>
+                <li class="list-inline-item"><a asp-controller="home" asp-action="recipes">Tarifler</a></li>
+                <li class="list-inline-item"><a asp-controller="home" asp-action="about">Hakkımızda</a></li>
+                <li class="list-inline-item"><a asp-controller="home" asp-action="contact">İletişim</a></li>
+            </ul>
+            <p class="copyright">Yüksek Ateş © 2022</p>
+        </footer>
+    </div>
+
+
+   <partial name="_JsPartial"></partial>
+ 
+    @await RenderSectionAsync("Warning" , required: false)
+    @await RenderSectionAsync("Update" , required: false)
+
+</body>
+</html>
